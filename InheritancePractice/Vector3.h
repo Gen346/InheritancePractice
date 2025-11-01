@@ -1,0 +1,79 @@
+#pragma once
+#ifndef VECTOR3_H
+#define VECTOR3_H
+
+#include <cmath>
+#include <iostream>
+
+struct Vector3
+{
+	Vector3() : mX(0), mY(0), mZ(0) {};
+	Vector3(float mX, float mY, float mZ) : mX(mX), mY(mY), mZ(mZ) {};
+
+	float mX;
+	float mY;
+	float mZ;
+
+	inline Vector3 operator+(const Vector3& rhs) const //Vector addition
+	{
+		return { mX + rhs.mX, mY + rhs.mY, mZ + rhs.mZ };
+	}
+
+	inline Vector3 operator-(const Vector3& rhs) const // Vector subtraction
+	{
+		return { mX - rhs.mX, mY - rhs.mY, mZ - rhs.mZ };
+	}
+
+	inline Vector3 operator*(float scalar) const // Vector * scalar
+	{
+		return { mX * scalar, mY * scalar, mZ * scalar };
+	}
+
+	friend inline Vector3 operator*(float scalar, const Vector3& rhs) // Scalar * Vector
+	{
+		return { scalar * rhs.mX, scalar * rhs.mY, scalar * rhs.mZ };
+	}
+	inline float operator*(Vector3& rhs) // Dot product
+	{
+		float dotP = mX * rhs.mX + mY * rhs.mY + mZ * rhs.mZ;
+		
+		return dotP;
+	}
+
+	inline bool operator==(const Vector3& rhs) const // Equality
+	{
+		const float EPS = 1e-6f;
+
+		return std::fabs(mX - rhs.mX) < EPS && std::fabs(mY - rhs.mY) < EPS && std::fabs(mZ - rhs.mZ) < EPS;
+	}
+	inline bool operator!=(const Vector3& rhs) const // Not equal
+	{
+		const float EPS = 1e-6f;
+
+		return std::fabs(mX - rhs.mX) > EPS && std::fabs(mY - rhs.mY) > EPS && std::fabs(mZ - rhs.mZ) > EPS;
+	}
+
+	friend inline std::ostream& operator<<(std::ostream& os, const Vector3& rhs)
+	{
+		os << "(" << rhs.mX << ", " << rhs.mY << ", " << rhs.mZ << ")";
+		return os;
+	}
+
+	void normalize()
+	{
+		float length = sqrtf(mX * mX + mY * mY + mZ * mZ);
+
+		if (length != 0)
+		{
+			mX / length;
+			mY / length;
+			mZ / length;
+		}
+	}
+	float length() const
+	{
+		return sqrtf(mX * mX + mY * mY + mZ * mZ);
+	}
+};
+
+#endif
