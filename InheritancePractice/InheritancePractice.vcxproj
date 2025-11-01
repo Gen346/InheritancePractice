@@ -123,12 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Boombership.cpp" />
+    <ClCompile Include="ConstructorsTestCase.cpp" />
     <ClCompile Include="Fightership.cpp" />
     <ClCompile Include="InheritancePractice.cpp" />
     <ClCompile Include="Speceship.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boombership.h" />
+    <ClInclude Include="ConstructorTestCase.h" />
     <ClInclude Include="Fightership.h" />
     <ClInclude Include="Spaceship.h" />
   </ItemGroup>

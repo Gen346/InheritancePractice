@@ -24,6 +24,12 @@
     <ClCompile Include="Fightership.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Boombership.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructorsTestCase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Spaceship.h">
@@ -33,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Boombership.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructorTestCase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
