@@ -11,14 +11,10 @@ Fightership::Fightership()
 }
 
 Fightership::Fightership(const std::string& name, const Vector3& pos, const Vector3& vel, int fuel, int damage, int numMissiles)
-{
-	mName = name;
-	mPosition = pos;
-	mVelocity = vel;
-	mFuelLevel = fuel;
-	mDamage = damage;
-	mNumMissiles = numMissiles;
-}
+	:Spaceship(name, pos, vel, fuel, damage),
+	mNumMissiles (numMissiles)
+{}
+
 
 void Fightership::fireLaserGun()
 {
