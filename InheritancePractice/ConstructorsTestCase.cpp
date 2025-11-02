@@ -6,7 +6,7 @@ double testConstructor(int numObjects)
 
 	for (int i = 0; i < numObjects; ++i)
 	{
-		Fightership fighterShip{ "fighter", Vector3{1,1,0}, Vector3{1,1,0}, 95, 100, 85 };
+		Fightership fighterShip( "fighter", Vector3(1,1,0), Vector3(1,1,0), 95, 100, 85 );
 	}
 
 	std::chrono::high_resolution_clock::time_point endConstructor = std::chrono::high_resolution_clock::now();
@@ -21,7 +21,7 @@ double testMemberList(int numObjects)
 
 	for (int i = 0; i < numObjects; ++i)
 	{
-		Bombership bomberShip{ "bomber", Vector3{1,1,0}, Vector3{1,1,0}, 95, 100, 85 };
+		Bombership bomberShip( "bomber", Vector3(1,1,0), Vector3(1,1,0), 95, 100, 85 );
 	}
 
 	std::chrono::high_resolution_clock::time_point endMemberList = std::chrono::high_resolution_clock::now();
